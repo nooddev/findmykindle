@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Find My Kindle & Android Device -- Home</title>
+    <link href="css/fmk.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src="js/fmk.js"></script>
+  </head>
+
+  <body>
+  <!-- Google Analytics -->
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-47312857-1', 'findmykindle.net');
+      ga('send', 'pageview');
+  </script>
+
+    <!-- FMK App Interface -->
+    <div id="fmkapp">
+      <div class="title">
+        <h1>Find My Device</h1>
+    </div>
+      <div class="content"></div>
+    </div>
+
+  <div id="markets">
+      <div class="section">
+          <a href="https://play.google.com/store/apps/details?id=us.jsy.find.kindle">
+              <img alt="Get it on Google Play"
+                   src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+          </a>
+          <a href="http://www.amazon.com/Kewe-Find-My-Kindle-Android/dp/B00H5A9QJ4">
+              <img width="200" height="63" alt="Get it on Amazon Store" src="images/amazon_store.png"/>
+          </a>
+          <a href="#">
+              <img width="180" height="59" alt="iOS App Coming Soon" src="images/apple_store_coming_soon.png"/>
+          </a>
+      </div>
+  </div>
+  <!-- Google Ads -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Find My Device -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:90%;height:90px"
+       data-ad-client="ca-pub-2051782030194227"
+       data-ad-slot="7870183804"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+    <!-- Templates -->
+    <script type="text/template" id="login-template">
+      <header id="header"></header>
+      <div class="login">
+        <form class="login-form">
+          <h2>Log In</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <button>Log In</button>
+        </form>
+      </div>
+    </script>
+
+    <script type="text/template" id="manage-devices-template">
+      <div id="user-info">
+        Signed in as <%= Parse.User.current().get("username") %> (<a href="#" class="log-out">Log out</a>)
+      </div>
+
+      <div class="section">
+        <div id="main">
+          <ul id="device-list">
+          </ul>
+        </div>
+
+        <div id="device-stats"></div>
+      </div>
+    </script>
+
+    <script type="text/template" id="item-template">
+      <li class="<%= done ? 'completed' : '' %>">
+	<div class="view">
+	  <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %>>
+	  <label class="device-content"><%= content %></label>
+	  <button class="device-destroy"></button>
+	</div>
+	<input class="edit" value="<%= content %>">
+      </li>
+    </script>
+  </body>
+</html>

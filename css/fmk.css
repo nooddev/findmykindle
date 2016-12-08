@@ -1,0 +1,286 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    padding: 0 0 0 0;
+    border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 40px;
+    background: #eeeeee url('../images/bg.png');
+    color: #4d4d4d;
+    width: 95%;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+#fmkapp {
+    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 60px 0 20px 0;
+    border: 1px solid #ccc;
+    position: relative;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.15);
+}
+
+#fmkapp input::-webkit-input-placeholder {
+    font-style: italic;
+}
+
+#fmkapp input:-moz-placeholder {
+    font-style: italic;
+    color: #a9a9a9;
+}
+
+#fmkapp h1 {
+    position: absolute;
+    top: -80px;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #888;
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+}
+
+.section {
+    position: relative;
+}
+
+#header {
+    padding-top: 15px;
+    border-radius: inherit;
+}
+
+#header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 15px;
+    z-index: 2;
+    border-bottom: 1px solid #6c615c;
+    background: #8d7d77;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(132, 110, 100, 0.8)),to(rgba(101, 84, 76, 0.8)));
+    background: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    background: -moz-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    background: -o-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    background: -ms-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    background: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#9d8b83', EndColorStr='#847670');
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+
+#main {
+    position: relative;
+    z-index: 2;
+    border-top: 1px dotted #adadad;
+}
+
+#device-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#device-list .spinner {
+    margin: 15px auto;
+}
+
+#device-list li {
+    text-align: left;
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px dotted #ccc;
+    white-space:nowrap;
+}
+
+#device-list li a {
+    padding: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+#device-list li .button-group {
+    /*text-align: right;*/
+    position:relative;
+    left:-150px;
+    width: 0px;
+    /*padding: 5px 5px 5px 5px;*/
+    /*display: inline-block;*/
+    float: right;
+}
+
+#device-list li a:hover {
+    background: transparent url('../images/destroy.png') no-repeat 3px 170px;
+}
+
+#device-list li:last-child {
+    border-bottom: none;
+}
+
+#device-list li label {
+    word-break: break-word;
+    margin: 15px 15px 15px 60px;
+    display: inline-block;
+    line-height: 1.2;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+#device-list li a[target="_self"] {
+    display:inline-block;
+    line-height:20px; /* check your icon height */
+    /*background:transparent url(../images/spinner.gif)  center right no-repeat;*/
+    padding-left:20px;
+}
+
+#footer {
+    color: #777;
+    padding: 0 15px;
+    position: absolute;
+    right: 0;
+    bottom: -31px;
+    left: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+#footer:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 31px;
+    left: 0;
+    height: 100px;
+    z-index: -1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
+    0 6px 0 -3px rgba(255, 255, 255, 0.8),
+    0 7px 1px -3px rgba(0, 0, 0, 0.3),
+    0 42px 0 -6px rgba(255, 255, 255, 0.8),
+    0 43px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+#device-count {
+    float: left;
+    text-align: left;
+}
+
+#info {
+    margin: 65px auto 0;
+    color: #a6a6a6;
+    font-size: 12px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+#info a {
+    color: inherit;
+}
+
+/*
+  Hack to remove background from Mobile Safari.
+  Can't use it globally since it destroys checkboxes in Firefox and Opera
+  */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #toggle-all,
+    #device-list li .toggle {
+	background: none;
+    }
+}
+
+#fmkapp .content .login {
+    width: 350px;
+    margin: 45px auto 25px auto;
+}
+
+#fmkapp .content .login h2 {
+    font-weight: normal;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#fmkapp .content .login input {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 5px;
+    width: 340px;;
+}
+
+#fmkapp .content .login .signup-form {
+    margin-top: 25px;
+}
+
+#fmkapp .content .login button {
+    padding: 5px 10px;
+    background: #eee;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-family: "Helvetica Neue";
+}
+
+#fmkapp .content .login .error {
+    border: 1px solid red;
+    background: #FDEFF0;
+    padding: 5px 15px;
+    margin-bottom: 15px;
+}
+
+#fmkapp .content #user-info {
+    padding: 5px 10px;
+    border-top: 1px solid #ededed;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+#fmkapp .content .mark-all-done {
+    margin-left: 8px;
+}
+
+#credits {
+    color: #888;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#credits a {
+    color: #888;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
